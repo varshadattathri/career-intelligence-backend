@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>☁ Cloud Career Dashboard</h2>
+</div>
+
+<div class="container">
+
+    <h1>Resume Analyzer</h1>
+
+    <textarea id="jd" placeholder="Job Description"></textarea>
+
+    <textarea id="resume" placeholder="Paste Resume"></textarea>
+
+    <button onclick="analyzeResume()">
+        Analyze Resume
+    </button>
+
+    <div class="cloud-panel">
+
+        <div class="cloud-box">
+            <span>3</span>
+            <p>Virtual Machines</p>
+        </div>
+
+        <div class="cloud-box">
+            <span id="globalRank">0</span>
+            <p>Global Rank</p>
+        </div>
+
+    </div>
+
+    <div id="result"></div>
+
+    <a href="interview.html">
+        <button>Interview Questions</button>
+    </a>
+
+    <a href="learning.html">
+        <button>Learning Recommendations</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

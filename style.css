@@ -1,0 +1,56 @@
+body {
+    font-family: Calibri;
+    background: #F4F9FF;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #0F4C81;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.container {
+    width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+textarea,
+input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #1B76D1;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #1B76D1;
+    color: white;
+    font-size: 16px;
+}
+
+.cloud-panel {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cloud-box {
+    flex: 1;
+    background: #F2F7FF;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+}
