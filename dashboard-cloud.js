@@ -11,12 +11,15 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 async function loadAnalytics(){
 
     const snapshot =
-    await getDocs(
-        collection(
-            db,
-            "resumeHistory"
-        )
-    );
+await getDocs(
+    collection(db, "resumeHistory")
+);
+
+console.log("Documents found:", snapshot.size);
+
+snapshot.forEach((doc)=>{
+    console.log(doc.id, doc.data());
+});
 
     let total = 0;
     let highest = 0;
