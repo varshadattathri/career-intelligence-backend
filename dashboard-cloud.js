@@ -1,3 +1,4 @@
+console.log("Dashboard Cloud Loaded");
 import { db }
 from "./firebase-config.js";
 
