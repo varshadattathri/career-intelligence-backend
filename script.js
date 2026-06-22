@@ -23,7 +23,9 @@ function registerUser() {
     const p =
         document.getElementById("password").value;
 
-    fetch("http://localhost:8080/register", {
+    fetch(
+    "https://career-intelligence-backend-pstv.onrender.com/register",
+{
 
         method: "POST",
 
@@ -46,7 +48,9 @@ function loginUser() {
     const p =
         document.getElementById("password").value;
 
-    fetch("http://localhost:8080/login", {
+    fetch(
+    "https://career-intelligence-backend-pstv.onrender.com/login",
+{
 
         method: "POST",
 
@@ -121,24 +125,23 @@ document.getElementById(
 
     }, 1500);
 
-    try {
+   try {
 
-        const response = await fetch(
-            "http://localhost:8080/analyze",
-            {
+    const response = await fetch(
+        "https://career-intelligence-backend-pstv.onrender.com/analyze",
+        {
+            method: "POST",
 
-                method: "POST",
-
-                body:
+            body:
                 "Spoorthi###"
-                + jd +
-                "###"
+                + jd
+                + "###"
                 + resume
-            }
-        );
+        }
+    );
 
-        const data =
-            await response.json();
+    const data =
+        await response.json();
 
         clearInterval(interval);
 
