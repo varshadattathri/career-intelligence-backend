@@ -35,8 +35,8 @@ HttpServer server =
         server.start();
 
         System.out.println(
-                "Server running at localhost:8080"
-        );
+        "Server running on port " + port
+);
     }
 
     static class RegisterHandler
