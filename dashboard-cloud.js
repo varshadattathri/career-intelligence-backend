@@ -8,77 +8,69 @@ import {
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-async function loadAnalytics(){
+async function loadAnalytics() {
 
-    const snapshot =
-await getDocs(
-    collection(db, "resumeHistory")
-);
+    try {
 
-console.log("Documents found:", snapshot.size);
+        console.log("Reading Firestore...");
 
-snapshot.forEach((doc)=>{
-    console.log(doc.id, doc.data());
-});
+        const snapshot = await getDocs(
+            collection(db, "resumeHistory")
+        );
 
-    let total = 0;
-    let highest = 0;
-    let sum = 0;
+        console.log("Documents:", snapshot.size);
 
-    snapshot.forEach((doc)=>{
+        let total = 0;
+        let highest = 0;
+        let sum = 0;
 
-        console.log(doc.data());
+        snapshot.forEach((doc) => {
 
-        const data = doc.data();
+            console.log(doc.data());
 
-        total++;
+            const data = doc.data();
 
-        sum += data.score;
+            total++;
 
-        if(data.score > highest){
+            sum += Number(data.score);
 
-            highest = data.score;
-        }
-    });
+            if (Number(data.score) > highest) {
+                highest = Number(data.score);
+            }
+        });
 
-    const average =
-    total > 0
-    ? Math.round(sum/total)
-    : 0;
+        const average =
+            total > 0
+            ? Math.round(sum / total)
+            : 0;
 
-    document.getElementById(
-        "cloudAnalytics"
-    ).innerHTML = `
+        document.getElementById("cloudAnalytics").innerHTML = `
+            <div class="analytics-grid">
 
-    <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h2>${total}</h2>
+                    <p>Total Resumes</p>
+                </div>
 
-        <div class="analytics-card">
+                <div class="analytics-card">
+                    <h2>${average}%</h2>
+                    <p>Average Score</p>
+                </div>
 
-            <h2>${total}</h2>
+                <div class="analytics-card">
+                    <h2>${highest}%</h2>
+                    <p>Highest Score</p>
+                </div>
 
-            <p>Total Resumes</p>
+            </div>
+        `;
 
-        </div>
+    }
+    catch(error) {
 
-        <div class="analytics-card">
+        console.log("ERROR:", error);
 
-            <h2>${average}%</h2>
-
-            <p>Average Score</p>
-
-        </div>
-
-        <div class="analytics-card">
-
-            <h2>${highest}%</h2>
-
-            <p>Highest Score</p>
-
-        </div>
-
-    </div>
-
-    `;
+    }
 }
 
 loadAnalytics();
