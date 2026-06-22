@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+    <title>Resume Upload</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<div class="sidebar">
+
+    <div class="logo-area">
+
+        <h1>🚀 CIP</h1>
+
+        <p>Career Intelligence</p>
+
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="upload.html">
+            📄 Upload Resume
+        </a>
+
+        <a href="interview.html">
+            🎤 Interview AI
+        </a>
+
+        <a href="heatmap.html">
+            🧠 Skill Heatmap
+        </a>
+
+        <a href="assistant.html">
+            🤖 AI Assistant
+        </a>
+
+    </nav>
+
+</div>
+
+<div class="container">
+
+    <h1>📄 Resume Upload Center</h1>
+
+    <div class="ai-orb">
+
+        <div class="orb-core"></div>
+
+        <p id="orbText">
+            AI Resume Extraction Ready
+        </p>
+
+    </div>
+
+    <div class="upload-box"
+id="uploadBox"
+
+ondragover="dragOver(event)"
+
+ondragleave="dragLeave(event)"
+
+ondrop="dropFile(event)">
+
+        <div class="upload-icon">
+            📂
+        </div>
+
+        <h2>
+            Drag & Drop Resume
+        </h2>
+
+        <p>
+            Upload PDF or DOC Resume
+        </p>
+
+        <input
+type="file"
+id="resumeFile">
+
+<button onclick="uploadResume(); saveResume(document.getElementById('resumeFile').files[0].name)">
+    Analyze Resume
+</button>
+
+    </div>
+    <div id="analysisResult">
+
+</div>
+
+
+    <div
+    id="filePreview"
+    class="analytics-card full-card hidden">
+
+        <h2>📑 Uploaded Resume</h2>
+
+        <p id="fileName">
+            No file selected
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script type="module"
+src="resume-history.js">
+</script>
+
+</body>
+
+</html>

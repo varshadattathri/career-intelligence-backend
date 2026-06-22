@@ -1,58 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
+<div id="particles-js"></div>
+<div class="sidebar">
 
-<div class="header">
-    <h2>☁ Cloud Career Dashboard</h2>
-</div>
+    <div class="logo-area">
 
-<div class="container">
+        <h1>🚀 CIP</h1>
 
-    <h1>Resume Analyzer</h1>
-
-    <textarea id="jd" placeholder="Job Description"></textarea>
-
-    <textarea id="resume" placeholder="Paste Resume"></textarea>
-
-    <button onclick="analyzeResume()">
-        Analyze Resume
-    </button>
-
-    <div class="cloud-panel">
-
-        <div class="cloud-box">
-            <span>3</span>
-            <p>Virtual Machines</p>
-        </div>
-
-        <div class="cloud-box">
-            <span id="globalRank">0</span>
-            <p>Global Rank</p>
-        </div>
+        <p>Career Intelligence</p>
 
     </div>
 
-    <div id="result"></div>
+    <nav>
 
-    <a href="interview.html">
-        <button>Interview Questions</button>
-    </a>
+        <a href="dashboard.html" class="active">
+            🏠 Dashboard
+        </a>
 
-    <a href="learning.html">
-        <button>Learning Recommendations</button>
-    </a>
+        <a href="upload.html">
+            📄 Upload Resume
+        </a>
+
+        <a href="interview.html">
+            🎤 Interview AI
+        </a>
+
+        <a href="heatmap.html">
+            🧠 Skill Heatmap
+        </a>
+
+        <a href="assistant.html">
+            🤖 AI Assistant
+        </a>
+
+    </nav>
+
+</div>
+<div class="container">
+
+    <h1>🚀 Career Intelligence Platform</h1>
+    <div class="ai-orb">
+
+    <div class="orb-core"></div>
+
+    <p id="orbText">
+        AI Assistant Active
+    </p>
+
+</div>
+
+    
+
+    <p class="section-title">
+        Job Description
+    </p>
+
+    <textarea
+        id="jd"
+        placeholder="Paste job description here..."
+    ></textarea>
+
+    <p class="section-title">
+        Resume
+    </p>
+
+    <textarea
+        id="resume"
+        placeholder="Paste your resume here..."
+    ></textarea>
+
+    <button onclick="analyzeResume()">
+        ✨ Analyze Resume
+    </button>
+
+    <div id="loader" class="loader hidden">
+
+    <div class="scanner"></div>
+
+    <p id="loadingText">
+        Initializing AI Engine...
+    </p>
+
+</div>
+<div class="analytics-card full-card">
+
+    <h2>☁ Cloud Services</h2>
+
+    <p>✅ Firebase Authentication Active</p>
+
+    <p>✅ Cloud User Management Enabled</p>
+
+    <p>✅ Google Firebase Connected</p>
+
+    <p>✅ Cloud Login Operational</p>
+
+</div>
+
+<div id="result"></div>
+
+<div class="analytics-card full-card">
+
+    <h2>📊 Cloud Analytics Dashboard</h2>
+
+    <div id="cloudAnalytics">
+
+        Loading cloud analytics...
+
+    </div>
+
+</div>
 
 </div>
 
 <script src="script.js"></script>
 
+<script type="module"
+src="dashboard-cloud.js">
+</script>
+
+<script>
+
+tsParticles.load("particles-js", {
+
+    background: {
+        color: "transparent"
+    },
+
+    particles: {
+
+        number: {
+            value: 70
+        },
+
+        color: {
+            value: "#4d8dff"
+        },
+
+        links: {
+
+            enable: true,
+
+            color: "#4d8dff",
+
+            opacity: 0.2
+        },
+
+        move: {
+            enable: true,
+            speed: 1
+        },
+
+        opacity: {
+            value: 0.3
+        },
+
+        size: {
+            value: 2
+        }
+    }
+});
+
+</script>
 </body>
 </html>

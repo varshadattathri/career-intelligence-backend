@@ -10,11 +10,18 @@ public class MainServer {
     public static void main(String[] args)
             throws Exception {
 
-        HttpServer server =
-                HttpServer.create(
-                        new InetSocketAddress(8080),
-                        0
-                );
+        int port = Integer.parseInt(
+    System.getenv().getOrDefault(
+        "PORT",
+        "8080"
+    )
+);
+
+HttpServer server =
+    HttpServer.create(
+        new InetSocketAddress(port),
+        0
+    );
 
         server.createContext("/register",
                 new RegisterHandler());
@@ -54,6 +61,8 @@ public class MainServer {
                 String r = ok
                         ? "REGISTERED"
                         : "USER EXISTS";
+                ex.getResponseHeaders()
+    .add("Access-Control-Allow-Origin", "*");
 
                 ex.sendResponseHeaders(200, r.length());
 
@@ -89,6 +98,8 @@ public class MainServer {
 
                 String r =
                         ok ? "SUCCESS" : "FAIL";
+                ex.getResponseHeaders()
+    .add("Access-Control-Allow-Origin", "*");
 
                 ex.sendResponseHeaders(200, r.length());
 

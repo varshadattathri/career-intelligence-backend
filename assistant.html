@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>AI Career Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<div class="sidebar">
+
+    <div class="logo-area">
+
+        <h1>🚀 CIP</h1>
+
+        <p>Career Intelligence</p>
+
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="upload.html">
+            📄 Upload Resume
+        </a>
+
+        <a href="interview.html">
+            🎤 Interview AI
+        </a>
+
+        <a href="heatmap.html">
+            🧠 Skill Heatmap
+        </a>
+
+        <a href="assistant.html">
+            🤖 AI Assistant
+        </a>
+
+    </nav>
+
+</div>
+
+<div class="container">
+
+    <h1>🤖 AI Career Assistant</h1>
+
+    <div class="ai-orb">
+
+        <div class="orb-core"></div>
+
+        <p id="orbText">
+            AI Career Mentor Online
+        </p>
+
+    </div>
+
+    <div class="chat-container">
+
+        <div id="chatMessages">
+
+            <div class="ai-message">
+
+                Hello Candidate 👋<br><br>
+
+                I am your AI Career Assistant.
+                Ask me anything about:
+                <br><br>
+
+                • Career Growth<br>
+                • Skills<br>
+                • Interviews<br>
+                • AI Trends<br>
+                • Resume Building
+
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+
+            <input
+            type="text"
+            id="userInput"
+            placeholder="Ask AI anything...">
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
