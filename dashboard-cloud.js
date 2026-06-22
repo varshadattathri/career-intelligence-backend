@@ -23,6 +23,8 @@ async function loadAnalytics(){
 
     snapshot.forEach((doc)=>{
 
+        console.log(doc.data());
+
         const data = doc.data();
 
         total++;
